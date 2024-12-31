@@ -14,7 +14,11 @@ const App = () => {
 
   console.log(myData);
   return (
-    <Fragment>
+    <div
+      style={{
+        width: "100vw",
+      }}
+    >
       <Header />
       <div className="main-container">
         <div className="main-left">
@@ -136,7 +140,7 @@ const App = () => {
           ))}
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 export default App;

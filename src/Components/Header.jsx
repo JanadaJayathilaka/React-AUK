@@ -10,11 +10,18 @@ const Header = () => {
         Janada <span>Jayathilaka</span>
       </h1>
       <nav>
+        <ol>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Project</li>
+        </ol>
         <img
+          className="header-menuClick"
           src={menu}
           alt="menu"
           onClick={() => {
-            setMenuClick(true);
+            setMenuClick((pre) => (!pre ? true : pre));
           }}
         />
         <ul
@@ -25,7 +32,7 @@ const Header = () => {
           <div
             className="header-menuclose"
             onClick={() => {
-              setMenuClick(false);
+              setMenuClick((pre) => (pre ? false : pre));
             }}
           >
             <img src={close} alt="close icon" />
