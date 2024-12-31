@@ -19,9 +19,9 @@
 
 .header-container nav ul{
     position: absolute;
-    top: -42px;
+    top: -20px;
     right: -20px;
-    padding: 20px 50px 50px;
+    padding: 20px ;
     background-color: rgb(237, 161, 161);
     display: flex;
     flex-direction: column;
@@ -29,13 +29,33 @@
     gap: 20px;
     height: 100VH;
     width: 22vh;
+    transition: all 400ms ease-in;
+}
+.header-container .header-menu{
+    margin: 50px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+}
+.header-container img{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+.header-container .header-menuclose img{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
 }
 .header-container nav ul li{
     cursor: pointer;
+    font-weight: bold;
 }
 .header-container nav ul li:hover{
    color: red;
-   font-weight: bold;
+   
    transition: all 100ms ease-in;
 }
 
