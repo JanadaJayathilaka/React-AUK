@@ -27,6 +27,7 @@ const Header = () => {
         <ul
           style={{
             right: `${menuClick ? "-20px" : "-250px"}`,
+            display: `${menuClick ? "flex" : "none"}`,
           }}
         >
           <div

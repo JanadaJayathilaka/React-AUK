@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import "./App.css";
 import { Unit } from "./Components/Unit";
 import Header from "./Components/Header";
@@ -12,7 +12,19 @@ const App = () => {
     position: "",
   });
 
-  console.log(myData);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const changeWindowWidth = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", changeWindowWidth);
+    console.log("useEffect calling");
+    return () => {
+      console.log("Use Effect Cleanup Function running");
+      window.removeEventListener("resize", changeWindowWidth);
+    };
+  }, [inputData.name]);
   return (
     <div
       style={{
@@ -21,6 +33,7 @@ const App = () => {
     >
       <Header />
       <div className="main-container">
+        <h1>{windowWidth}</h1>
         <div className="main-left">
           <input
             placeholder="ImageUrl"
